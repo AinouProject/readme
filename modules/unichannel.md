@@ -6,7 +6,7 @@
 
 ## 命令语法
 
-  #uc [method] [args]
+    #uc [method] [args]
 
 其中 **method** 为某个子功能的关键字。
 
@@ -14,13 +14,13 @@
 
 ### 创建联合频道
 
-  #uc create [联合频道名字]
+    #uc create [联合频道名字]
 
 此命令创建一个联合频道。此后，通过 `#uc connect` 以建立连接。
 
 ### 连接联合频道
 
-  #uc connect [联合频道名字] [IM频道代号]
+    #uc connect [联合频道名字] [IM频道代号]
 
 此命令将一个频道连接到联合频道。
 
