@@ -14,8 +14,8 @@ Ainou Project 是一个人工人格项目，意在实现萌系聊天、功能人
 
 * [知识管理模块](modules/knowledge_manager.md)
 
-  管理 Ainou 所学的人类知识。该模块提供 `#kb` 命令。
+    管理 Ainou 所学的人类知识。该模块提供 `#kb` 命令。
 
 * [联合频道模块](modules/unichannel.md)
 
-  管理联合频道。该模块提供 `#uc` 命令。
+    管理联合频道。该模块提供 `#uc` 命令。
