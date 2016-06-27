@@ -12,7 +12,7 @@ Ainou Project 是一个人工人格项目，意在实现萌系聊天、功能人
 
 ## 知识与学习
 
-* [教学](modules/teach.md)
+* [教学命令](modules/teach.md)
 
     给 Ainou 教学人类的知识。该模块提供 `-t` 命令。
 
