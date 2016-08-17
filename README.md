@@ -52,7 +52,7 @@ Ainou Project 是一个人工人格项目，意在实现萌系聊天、功能人
 
 * [联合频道](modules/unichannel.md)
 
-    利用联合频道跨多个 IM 传送聊天信息。该模块提供 `#uc` 命令。
+    利用联合频道跨多个 IM 传送聊天信息。该模块提供 `#uc`, `-isolate` 命令。
 
 * [复读机](modules/repeater.md)
 
