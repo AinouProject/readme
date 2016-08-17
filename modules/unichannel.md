@@ -10,8 +10,7 @@
 
 1. 使用 `#uc create [联合频道名字]` 创建一个联合频道
 2. 将某个 Ainou Port 加入需要联合的群组
-3. 在上述群组中使用 `-whoami full` 得到频道ID，并在上述 Ainou Port 的私聊中使用 `#uc connect [联合频道名字] [频道ID]` 以连接频道
-    * 或在上述群组中使用 `#uc connect this` 以连接当前频道
+3. 在上述群组中使用 `#uc connect [联合频道名字]` 以连接当前频道
 
 ### 在联合频道中聊天
 
