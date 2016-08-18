@@ -140,9 +140,6 @@ O.renderer.heading = function (text, level) {
 	}
 	return orgRenderer.heading.apply(this, arguments);
 }
-O.renderer.em = function (text) {
-	return '_' + text + '_';
-}
 //初始化 Markdown
 marked.setOptions({
 	renderer: O.renderer,
