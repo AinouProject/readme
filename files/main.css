@@ -4,11 +4,14 @@ html, body {
 	padding: 0;
 }
 body {
-	font-family:"PingFang SC","Lantinghei SC","微软雅黑","Microsoft Yahei","文泉驿微米黑","WenQuanYi Micro Hei";
+	font-family:"PingFang SC","微软雅黑","Microsoft Yahei","文泉驿微米黑","WenQuanYi Micro Hei";
 	background-image: url('backgroud.jpg');
 	background-attachment: fixed;
 	background-size: cover;
 	color: #333;
+}
+p, pre, xmp, plaintext, listing {
+	margin: .5rem 0;
 }
 a {
 	text-decoration: none;

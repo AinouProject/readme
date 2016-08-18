@@ -1,5 +1,5 @@
 var O = O || {};
-O.title = 'Ainou Project';
+O.title = 'Ainou Project 知识库';
 O.currentPath = '';
 O.isRelative = function(url) {
 	return !url.match(/^((https?|ftp|mailto)\:|\/)/)
@@ -16,7 +16,15 @@ O.realPath = function(url) {
 }
 O.fixPath = function(url) {
 	// 修正相对路径
-	return url.replace(/\/[^/]+\/\.\.\//g, '/');
+	var newUrl;
+	while (true) {
+		newUrl = url.replace(/\/[^/]+\/\.\.\//g, '/');
+		if (url === newUrl) {
+			break;
+		}
+		url = newUrl;
+	}
+	return newUrl;
 }
 O.get = function(url, success, error) {
 	var request = new XMLHttpRequest();
@@ -30,7 +38,7 @@ O.get = function(url, success, error) {
 	request.open('GET', url, true);
 
 	request.onload = function() {
-		if (request.status >= 200 && request.status < 400) {
+		if (request.status >= 200 && request.status < 300) {
 			//请求完毕，更新路径
 			path = url.replace(/\/[^\/]*\/?$/, '');
 			if(path != url){
@@ -38,7 +46,11 @@ O.get = function(url, success, error) {
 			}
 			success(request.responseText);
 		} else {
-			error(request.responseText);
+			if (request.status === 404) {
+				error('请求的文件没有找到。');
+			} else {
+				error(request.responseText);
+			}
 		}
 	};
 
@@ -52,13 +64,15 @@ O.route = function(url) {
 	//var url = window.location.hash.slice(1);
 	if (url.match(/\.m(?:ark)?d(?:own)?$/)) {
 		//markdown 文件
-		O.get(url, O.parse, O.error.bind(this, '渲染Markdown'));
+		O.get(url, O.parse, O.error.bind(this, '读取 Markdown '));
 	}else if (url.match('/$') || url == '') {
 		//目录
-		O.get(url + 'README.md', O.parse, O.error.bind(this, '渲染Markdown'));
-	}else if (url.match(/\.html?$/)) {
+		O.get(url + 'README.md', O.parse, O.error.bind(this, '读取目录 README '));
+	}else if (url.match(/\.inline\.html?$/)) {
 		// html 文件
-		O.get(url, O.html, O.error.bind(this, '读取HTML'));
+		O.get(url, O.html, O.error.bind(this, '读取 HTML'));
+	}else if (url.match(/\.txt$/)) {
+		O.get(url, O.text, O.error.bind(this, '读取文本'));
 	}
 }
 //渲染并写入HTML
@@ -79,8 +93,17 @@ O.html = function(html) {
 		eval(scripts[i].text);
 	}
 }
+O.text = function (text) {
+	document.title = O.title;
+	var el = document.createElement('pre');
+	var content = document.getElementById('content');
+	content.innerHTML = '';
+	content.appendChild(el);
+	el.textContent = text;
+}
 //失败提示
 O.error = function(when, why) {
+	document.title = '错误 - ' + O.title;
 	document.getElementById('content').innerHTML = when + '失败，原因：' + why;
 }
 
@@ -108,7 +131,11 @@ O.renderer.link = function(href, title, text) {
 //hook 住 h1 ，写入标题
 O.renderer.heading = function (text, level) {
 	if (level == 1 && O.isFirstHeading) {
-		document.title = text + ' - ' + O.title;
+		if (text !== O.title) {
+			document.title = text + ' - ' + O.title;
+		} else {
+			document.title = O.title;
+		}
 		O.isFirstHeading = false;
 	}
 	return orgRenderer.heading.apply(this, arguments);
@@ -131,7 +158,12 @@ marked.setOptions({
 //监听 Hash Change
 
 var locationHashChanged = function(){
-	O.route(window.location.hash.slice(1));
+	if (window.location.hash.slice(0, 3) !== '#./') {
+		// 禁用非 ./ 开头的路径
+		window.location.hash = '#./';
+		return;
+	}
+	O.route(window.location.hash.slice(1).replace(/\|.*$/, ''));
 }
 
 if ("onhashchange" in window) {
