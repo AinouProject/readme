@@ -11,3 +11,5 @@ Ainou Project 是一个人工人格项目，意在实现萌系聊天、功能人
 ## 常用链接
 
 [功能导航](modules/)
+
+[积分说明](rules/credits.md)
