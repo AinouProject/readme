@@ -44,6 +44,10 @@ O.get = function(url, success, error) {
 			if(path != url){
 				O.currentPath = path + '/';	//把当前路径设置过去
 			}
+			var docUrl = url.replace(/^\.\//, '');
+			var baseUrl = 'https://github.com/AinouProject/readme';
+			document.getElementById('edit-link').href = baseUrl + '/edit/master/' + docUrl;
+			document.getElementById('history-link').href = baseUrl + '/commits/master/' + docUrl;
 			success(request.responseText);
 		} else {
 			if (request.status === 404) {

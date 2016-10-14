@@ -47,7 +47,7 @@ ul.nav li a {
 ul.nav li a:hover {
 	background-color: #333;
 }
-#content {
+.content {
 	max-width: 800px;
 	margin-left: auto;
 	margin-right: auto;
@@ -59,13 +59,29 @@ ul.nav li a:hover {
 	word-break: break-all;
 	word-wrap: break-word;
 }
-#content code, #content pre {
+.content code, #content pre {
 	white-space: pre-wrap;
 	word-break: break-all;
 	word-wrap: break-word;
 }
-#content img {
+.content img {
 	max-width: 99%;
+}
+.content .links {
+	padding-top: 20px;
+	width: 100%;
+	text-align: center;
+	opacity: 0.3;
+	transition: all 300ms;
+}
+.content .links .hidden {
+	display: none;
+}
+.content .links:hover .hidden {
+	display: block;
+}
+.content .links:hover {
+	opacity: 1;
 }
 h1 {
 	margin: 2px 0;
