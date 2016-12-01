@@ -8,7 +8,7 @@ Ainou Project 是一个人工人格项目，意在实现萌系聊天、功能人
 2. 基于简单的 NLP 实现的自然语言理解，能与人类进行日常聊天
 3. 有比较完整的世界观设定
 
-## 如何编辑知识库
+## 如何编辑知识库 {#how-to-edit}
 
 Ainou Project 知识库使用 GitHub 托管知识库文件，使用 Markdown 写作知识库。你可以通过[文档版](https://docs.ainou.com)或[知识库版](https://wiki.ainou.com)来查看文档。
 
