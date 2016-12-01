@@ -1,11 +1,19 @@
 {
     "plugins": [
-        "github-edit"
+        "github-edit",
+        "anchors-zhcn",
+        "git-author"
     ],
     "pluginsConfig": {
         "github-edit": {
             "repo": "AinouProject/wiki",
             "branch": "master"
+        },
+        "git-author": {
+            "position": "bottom",
+            "modifyTpl": "{user} 于 {timeStamp} 最后修改",
+            "createTpl": "{user} 于 {timeStamp} 创建",
+            "timeStampFormat": "YYYY-MM-DD HH:mm:ss"
         }
     }
 }
