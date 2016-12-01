@@ -1,7 +1,7 @@
 # 知识库总目录
 
-* [Ainou Project 知识库](README.md)
-* [关于](about.md)
+* [首页](README.md)
+* [关于 Ainou Project](about.md)
 * [功能导航](modules/README.md)
   * [教学命令](modules/teach.md)
   * [计算器](modules/calc.md)
