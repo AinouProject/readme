@@ -1,1 +1,11 @@
-{}
+{
+    "plugins": [
+        "github-edit"
+    ],
+    "pluginsConfig": {
+        "github-edit": {
+            "repo": "AinouProject/wiki",
+            "branch": "master"
+        }
+    }
+}
