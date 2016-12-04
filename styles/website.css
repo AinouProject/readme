@@ -1,6 +1,9 @@
 /* default font */
-html body {
+html body.font-family-1 {
     font-family:"Lantinghei SC","微软雅黑","Microsoft Yahei","文泉驿微米黑","WenQuanYi Micro Hei";
+}
+html body.font-family-2 {
+    font-family: "仿宋", "楷体", Georgia, serif;
 }
 /* twitter & facebook share */
 .btn.pull-right.js-toolbar-action[aria-label=""] {
