@@ -1,1 +1,8 @@
-/* CSS for website */
+/* default font */
+html body {
+    font-family:"Lantinghei SC","微软雅黑","Microsoft Yahei","文泉驿微米黑","WenQuanYi Micro Hei";
+}
+/* twitter & facebook share */
+.btn.pull-right.js-toolbar-action[aria-label=""] {
+    display: none;
+}
