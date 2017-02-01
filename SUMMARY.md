@@ -12,9 +12,11 @@
   * [选外卖](modules/waimai.md)
   * [登录注册](modules/user.md)
   * [萤火虫操作](modules/firefly.md)
+  * [促销码查询](modules/promo.md)
   * [联合频道](modules/unichannel.md)
   * [复读机](modules/repeater.md)
   * [知识管理](modules/knowledge_manager.md)
 * 规则与积分
   * [教学规则](rules/teach.md)
   * [积分规则](rules/credits.md)
+
