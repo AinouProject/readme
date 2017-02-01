@@ -17,6 +17,7 @@
   * [复读机](modules/repeater.md)
   * [知识管理](modules/knowledge_manager.md)
 * 规则与积分
+  * [最终用户许可协议](rules/tos.md)
   * [教学规则](rules/teach.md)
   * [积分规则](rules/credits.md)
 
