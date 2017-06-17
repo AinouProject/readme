@@ -21,7 +21,7 @@
   * [教学规则](rules/teach.md)
   * [积分规则](rules/credits.md)
 * 开发者资源
-  * [AinouHook](./developers/ainouhook.md)
-  * [数据结构定义](./developers/data-types.md)
+  * [AinouHook](developers/ainouhook.md)
+  * [数据结构定义](developers/data-types.md)
 
 
